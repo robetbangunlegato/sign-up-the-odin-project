@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <style>
+      @font-face {
+        font-family: "Norse";
+        src: url("./Norse.otf");
+      }
+      body {
+        font-family: "Norse", sans-serif;
+        background-image: url("background.jpg");
+        background-size: cover;
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-position: bottom;
+      }
+
+      .auth-container {
+        width: 80vw;
+        display: grid;
+        grid-template-columns: 30% 70%;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      .logo-section {
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 30px 0 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-img {
+        width: 80%;
+        height: auto;
+      }
+
+      /* Link login */
+      .auth-redirect {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1rem;
+        font-size: 1rem;
+      }
+
+      .auth-redirect p {
+        margin: 0;
+      }
+
+      .auth-redirect a {
+        color: #596d48;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      .auth-redirect a:hover {
+        color: #4a5b3c;
+      }
+
+      /* Button */
+      .btn-container {
+        margin-top: 1.5rem;
+      }
+
+      .btn-submit {
+        font-family: "Norse", sans-serif;
+        background-color: #596d48;
+        color: white;
+        font-size: 12pt;
+        padding: 1rem;
+      }
+
+      .btn-submit:hover {
+        background-color: #4a5b3c;
+      }
+
+      /* Form */
+      .form-section {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0 30px 30px 0;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        width: 100%;
+      }
+
+      .form-section form {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .form-group label {
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      .form-control {
+        border: 2px solid #e5e7eb;
+        padding: 10px;
+        box-sizing: border-box;
+      }
+
+      .form-control:user-valid {
+        border: 2px solid green;
+      }
+
+      .form-control:user-invalid {
+        border: 2px solid red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="auth-container">
+      <div class="logo-section">
+        <img src="odin_logo.png" alt="" class="logo-img" />
+      </div>
+
+      <div class="form-section">
+        <form action="/register" method="post">
+          <h1>Sign Up Page</h1>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                class="form-control"
+                type="text"
+                id="name"
+                name="name"
+                required
+                autofocus
+              />
+            </div>
+            <div class="form-group">
+              <label for="gender">Gender</label>
+              <select class="form-control" name="gender" id="gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                class="form-control"
+                type="email"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="phone_number">Phone number</label>
+              <input
+                class="form-control"
+                type="tel"
+                id="phone_number"
+                name="number"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                class="form-control"
+                type="password"
+                id="password"
+                name="password"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="confirm_password">Confirm password</label>
+              <input
+                class="form-control"
+                type="password"
+                id="confirm_password"
+                name="confirm_password"
+                required
+              />
+            </div>
+          </div>
+          <div class="btn-container">
+            <button class="btn-submit" type="submit">Create account</button>
+          </div>
+        </form>
+        <div class="auth-redirect">
+          <p>Already have an account?</p>
+          <a href="http://">Sign In</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
